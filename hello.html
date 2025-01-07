@@ -1,3 +1,35 @@
-<iframe src="https://giphy.com/embed/YTJXDIivNMPuNSMgc0" 
+<!DOCTYPE html>
+<html>
+<body>
+
+  <iframe src="https://giphy.com/embed/YTJXDIivNMPuNSMgc0" 
   width="842" height="1080" frameBorder="0" class="giphy-embed" 
   allowFullScreen></iframe><p><a href="https://giphy.com/gifs/moodman-fail-life-backflip-YTJDXDIivNMPuNSMgc0"></a></p>
+
+<h1>HTML Geolocation</h1>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+</body>
+</html>
+
